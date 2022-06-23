@@ -122,11 +122,9 @@ Copied `/etc/fail2ban/fail2ban.conf` as `fail2ban.local`. Repeated for `/etc/fai
 
 ### SSH
 Changed the LogLevel to VERBOSE in `/etc/ssh/sshd_config` in order to create logs detailed enough to catch DoS attacks.
-Enabled the SSHD filter in `/etc/fail2ban/jail.local` by adding the line `enabled = true` to the filter. By default, all filters are not enabled.
+Enabled the SSHD filter in `/etc/fail2ban/jail.local` by adding the line `enabled = true` to the filter. By default, all filters are not enabled. Also, added line `mode = ddos` to the SSHD filter in order to make it aggressive enough during DoS attacks.
 
 Command `fail2ban-client start` starts the Fail2ban service.
-
-Modified the jail in `/etc/fail2ban/jail.local` to be in `mode = ddos` . This resulted in my IP being banned when I tried to SSH into the VM with invalid key multiple times as well as when I attacked the SSH port with Slowloris.
 
 ### Apache
 
