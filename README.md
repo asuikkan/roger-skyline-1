@@ -70,7 +70,7 @@ iface enp0s3 inet static
 
 The netmask has to be /30 and the gateway is my host networks default gateway. The address is chosen by me by using the netmask.
 
-/In the case of error **Failed to bring up <interface>**, flushing the interface may work: `ip addr flush dev <interface>` .
+In the case of error **Failed to bring up interface**, flushing the interface may work: `ip addr flush dev <interface>` .
 
 ## Configure SSH
 
